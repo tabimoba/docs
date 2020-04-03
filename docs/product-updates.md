@@ -23,20 +23,14 @@ The “Repeat in Batches” feature enables users to process such a data movemen
 **Links:**
 - [Documentation](/recipes/steps.md#repeat-in-batches)
 
-## Salesforce Connector updates
+## Salesforce Connector update
 ##### March 2020
 
-### Trigger off of outbound messages and use any index field as the primary key
-We made two updates to the Salesforce Connector. First, you can now trigger a recipe off of outbound messages! This allows you to use native Salesforce functionality (i.e. Outbound Messages) to kick off a recipe. This provides for real-time use cases, like point-of-sale or order fulfillment, to be handled more easily.
-
-We also updated our “Upsert Records in Bulk” action so any indexed field can be used as the Primary Key, not just external IDs. If you do not store an ID in your external systems and use the Salesforce record ID (or other internal fields) as the primary identifier of a record, you can now use that field as the Primary Key.
-
-![SFDC Primary Key](~@img/product-updates/sfdc-primary-key.png)
-*Now you can select any indexed field as the primary key*
+### Trigger off of outbound messages
+You can now trigger a recipe off of Salesforce outbound messages. This allows you to use native Salesforce functionality (i.e. Workflow Rules that sends an Outbound Message) to kick off a recipe. This provides for real-time use cases, like point-of-sale or order fulfillment, to be handled more easily.
 
 **Links:**
 - [Learn More: New Outbound Message Trigger](connectors/salesforce/salesforce-real-time.md#choosing-the-right-trigger)
-- [Learn More: Primary Keys](/connectors/salesforce/salesforce-bulk.md#salesforce-object-to-create-update-upsert)
 
 ## API Platform update
 ##### March 2020
