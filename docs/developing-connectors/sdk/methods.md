@@ -388,7 +388,7 @@ Furthermore, you'll be able to declare personal reusable methods to use in any b
     </tr>
     <tr>
       <td>join</td>
-      <td>Returns the last item in a list. Can also be used to return the last n items in a list.
+      <td>Join array elements into a string
       <a href="https://apidock.com/ruby/Array/join">More details here.</a></td>
     </tr>
     <tr>
@@ -399,7 +399,7 @@ Furthermore, you'll be able to declare personal reusable methods to use in any b
     </tr>
     <tr>
       <td>last</td>
-      <td>Join array elements into a string
+      <td>Returns the last item in a list. Can also be used to return the last n items in a list.
       <a href="https://apidock.com/ruby/Array/last">More details here.</a></td>
     </tr>
     <tr>
