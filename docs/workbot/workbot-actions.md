@@ -318,42 +318,41 @@ The following table describes the configuration when working with Modals. This a
 <table class="unchanged rich-diff-level-one">
     <thead>
         <tr>
-            <th colspan=2>Input</th>
+            <th colspan=3>Input</th>
             <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td colspan=2>Trigger ID (required)</td>
+            <td colspan=3>Trigger ID (required)</td>
             <td>
                 Modal views can only be opened by interactive components (like buttons & menus), modal submissions, message actions, shortcuts, and slash commands. When users interact with or use these features, a trigger ID is generated. You can grab these from the New command trigger dataree under the Modals object.
             </td>
         </tr>
         <tr>
-            <td colspan=2>View ID (optional)</td>
+            <td colspan=3>View ID (optional)</td>
             <td>
                 To open a brand new modal view, leave this blank. To update an existing modal, specify the view ID of the view you want to update.
             </td>
         </tr>
         <tr>
-            <td rowspan="10">View</td>
-            <td>Title of modal</td>
+            <td rowspan="8">View</td>
+            <td colspan=2>Title of modal</td>
             <td>Title of the modal view. Up to 24 characters only.</td>
         </tr>
         <tr>
-            <td>Blocks</td>
+            <td colspan=2>Blocks</td>
             <td>An array of blocks you can stack and rearrange.</td>
         </tr>
         <tr>
+            <td rowspan=6>Submit view</td>
             <td>Submit command</td>
-            <td>
-                Command to invoke when users do a modal submission.
-            </td>
+            <td>Command to invoke when users do a modal submission.</td>
         </tr>
         <tr>
             <td>Hidden parameters</td>
             <td>
-                When users do a modal submission, you may want to pass some hidden parameters (e.g. the user ID, opportunity_id) so that the downstream recipe has context to work with. You'll need to define these parameters in the downstream recipe to use them there. <br><br>The parameter names in both upstream & downstream recipes must match.
+            When users submit modals, you may want to pass some parameters (e.g. the user ID, opportunity ID) so that the downstream recipe has context to work with.<br><br>You'll need to define these parameters in the <b>New command</b> trigger in the downstream recipe so that it's prepared to receive them. The parameter names in both upstream & downstream recipes must match.<br><br>Parameters can be passed either in comma-separated name-value pairs, e.g. name: John Smith, user_id: AB12345 or in JSON, e.g. {"opportunity_id": "OPP1234567"}. When using JSON, you can also pass array or object parameters.<br><br>It's important to ensure the parameter names and data types match their upstream counterparts, e.g. when using <code>opportunity_id</code> as a singleline input in the view of modal (rendered in an upstream recipe), also specify <code>opportunity_id</code> as a string parameter in the <b>New command</b> of the downstream recipe.
             </td>
         </tr>
         <tr>
@@ -369,18 +368,6 @@ The following table describes the configuration when working with Modals. This a
             </td>
         </tr>
         <tr>
-            <td>Callback ID</td>
-            <td>
-                For advanced users. Used to reference the view submission event in downstream recipes. Max length of 255 characters.
-            </td>
-        </tr>
-        <tr>
-            <td>Private metadata</td>
-            <td>
-                For advanced users. Used to pass sensitive data. This field is encrypted and hidden to users. Max length of 3000 characters.
-            </td>
-        </tr>
-        <tr>
             <td>Clear on close</td>
             <td>
                 Clicking on the close button will clear all views in a modal and close it. Defaults to false.
@@ -393,10 +380,21 @@ The following table describes the configuration when working with Modals. This a
             </td>
         </tr>
         <tr>
-            <td colspan=2>Hash</td>
+            <td rowspan=3>Advanced</td>
+            <td colspan=2>Private metadata</td>
             <td>
-                A unique value you can optionally use when updating modals. When provided, the hash is validated such that only the most recent view is updated, ensuring the correct view is being updated when updates are happening asynchronously.
+                For advanced users. Used to pass sensitive data. This field is encrypted and hidden to users. Max length of 3000 characters.
             </td>
+        </tr>
+        <tr>
+            <td colspan=2>Callback ID</td>
+            <td>
+                For advanced users. Used to reference the view submission event in downstream recipes. Max length of 255 characters.
+            </td>
+        </tr>
+        <tr>
+          <td colspan=2>Hash</td>
+          <td>A unique value you can optionally use when updating modals. When provided, the hash is validated such that only the most recent view is updated, ensuring the correct view is being updated when updates are happening asynchronously.</td>
         </tr>
     </tbody>
 </table>

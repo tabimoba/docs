@@ -31,7 +31,7 @@ A modal can hold up to 3 views at one time in a view stack. Users will only see 
 ![Modal stack with 3 views](~@img/workbot/workbot-blockkit/modal-stack.png)
 *Each modal can stack up to 3 views*
 
-Opening a modal opens in the root view. Updating a modal replaces the currently active view, while pushing a modal view applies a new view on top of the view stack.
+Opening a modal opens in the root view. Updating a modal replaces an existing view you specify (through its **View ID**), while pushing a modal view applies a new view on top of the view stack.
 
 Each view has an associated ID. You'll need this view ID if you want to update an existing view.
 
@@ -72,37 +72,36 @@ The following table describes the configuration when working with Modals. This a
 <table class="unchanged rich-diff-level-one">
     <thead>
         <tr>
-            <th colspan=2>Input</th>
+            <th colspan=3>Input</th>
             <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td colspan=2>Trigger ID (required)</td>
+            <td colspan=3>Trigger ID (required)</td>
             <td>
                 Modal views can only be opened by interactive components (like buttons & menus), modal submissions, message actions, shortcuts, and slash commands. When users interact with or use these features, a trigger ID is generated. You can grab these from the New command trigger dataree under the Modals object.
             </td>
         </tr>
         <tr>
-            <td colspan=2>View ID (optional)</td>
+            <td colspan=3>View ID (optional)</td>
             <td>
                 To open a brand new modal view, leave this blank. To update an existing modal, specify the view ID of the view you want to update.
             </td>
         </tr>
         <tr>
-            <td rowspan="10">View</td>
-            <td>Title of modal</td>
+            <td rowspan="8">View</td>
+            <td colspan=2>Title of modal</td>
             <td>Title of the modal view. Up to 24 characters only.</td>
         </tr>
         <tr>
-            <td>Blocks</td>
+            <td colspan=2>Blocks</td>
             <td>An array of blocks you can stack and rearrange.</td>
         </tr>
         <tr>
+            <td rowspan=6>Submit view</td>
             <td>Submit command</td>
-            <td>
-                Command to invoke when users do a modal submission.
-            </td>
+            <td>Command to invoke when users do a modal submission.</td>
         </tr>
         <tr>
             <td>Hidden parameters</td>
@@ -123,18 +122,6 @@ The following table describes the configuration when working with Modals. This a
             </td>
         </tr>
         <tr>
-            <td>Callback ID</td>
-            <td>
-                For advanced users. Used to reference the view submission event in downstream recipes. Max length of 255 characters.
-            </td>
-        </tr>
-        <tr>
-            <td>Private metadata</td>
-            <td>
-                For advanced users. Used to pass sensitive data. This field is encrypted and hidden to users. Max length of 3000 characters.
-            </td>
-        </tr>
-        <tr>
             <td>Clear on close</td>
             <td>
                 Clicking on the close button will clear all views in a modal and close it. Defaults to false.
@@ -147,10 +134,21 @@ The following table describes the configuration when working with Modals. This a
             </td>
         </tr>
         <tr>
-            <td colspan=2>Hash</td>
+            <td rowspan=3>Advanced</td>
+            <td colspan=2>Private metadata</td>
             <td>
-                A unique value you can optionally use when updating modals. When provided, the hash is validated such that only the most recent view is updated, ensuring the correct view is being updated when updates are happening asynchronously.
+                For advanced users. Used to pass sensitive data. This field is encrypted and hidden to users. Max length of 3000 characters.
             </td>
+        </tr>
+        <tr>
+            <td colspan=2>Callback ID</td>
+            <td>
+                For advanced users. Used to reference the view submission event in downstream recipes. Max length of 255 characters.
+            </td>
+        </tr>
+        <tr>
+          <td colspan=2>Hash</td>
+          <td>A unique value you can optionally use when updating modals. When provided, the hash is validated such that only the most recent view is updated, ensuring the correct view is being updated when updates are happening asynchronously.</td>
         </tr>
     </tbody>
 </table>
