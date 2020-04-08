@@ -151,22 +151,34 @@ Besides the input and outputs of the action or trigger, you'll also be able to s
 In the event of unsuccessful tests, the debugger console would feature red accents and also feature an additional tab called `error`. In this tab, you would be able to see the error message raised due to the logic error as well as the exact line of code that causes our framework to raise this error. In the event that the line of code was raised in a block other than the `execute:` block, we also provide a trace of the lines of code called that lead up to the final error.
 
 ## Sharing your connector
-After you've built and released a version of your connector, you'll be able to share it with other Workato users using your share link located in the "Settings" tab. When a user clicks on your share link, they'll be brought to an install page where they can view information about the latest released version of your connector including descriptions, source code and the actions and triggers present.
+After you've built and released a version of your connector, you'll be able to share this connector with others using the share tab. When you create a new connector, you'll first need to enable sharing via the `Share` tab. You'll need to have at least one version of the connector released to enable sharing.
 
-![Input popup](~@img/sdk/settings-page-share-link.png)
-*Share link in the settings page*
+![Empty state share tab](~@img/sdk/empty_state_share_tab.png)
+*Empty state*
 
-![Install page](~@img/sdk/install-page.png)
-*Install page for custom connector*
+Clicking on the `Enable sharing` button will bring up a modal which guides you through the set up. You'll need to select a version to share out of all previously released versions. Your shared version is the version of your connector which others receive when you let them install your connector. This version can be different from the one which is released into your own personal workspace and was done intentionally so you can test and verify that new versions are stable before sharing them with others.
+
+You'll provide a description of your connector which can be seen by anyone looking to install your connector. Provide useful information about the capabilities of your connector so your end users know what to expect.
+
+![Share modal](~@img/sdk/share_modal.png)
+*Select a version to share and provide a Description*
 
 ::: tip
 Your connector's description is the highlight of your install page. When you share your connector with others, make sure you have a description that showcases what your connector can do as well as other important information those using it might need.
 :::
 
-When users have reviewed your custom connector, they can choose to install it by clicking the "Install this connector" button in the top right corner. This will create an identical copy of this latest version in their own Workato account labeled as version 1. Users that install your connector will also have the notes attached to your latest version copied into their first version. Use version notes as a great way to let them know more about your connector.
+Thee are two ways to share connectors in Workato after enabling sharing. You may share your connector directly via a private link or by listing your connector on our community! Listing on the community is a quick and easy way to share your connector with all Workato users. They will be able to find and install your connector for use in their own recipes.
 
-![First version of a cloned connector with notes from a parent](~@img/sdk/share-connector-new-version-notes.png)
-*Installed connector with latest version notes. Milestone note lets the user know what to expect.*
+![Two modes of sharing](~@img/sdk/share_privately_or_publicly.png)
+*You may share your connector via share link or on the community*
+
+By sharing on the community, you'll also get your dedicated connector landing page which anyone can view. Users will be able to see more details about the current shared version of your connector, your connector's description as well as some details about you. Having a well thought out description and image for your account helps users build trust in your connector when they find it on the community.
+
+![Two modes of sharing](~@img/sdk/share_privately_or_publicly.png)
+*You may share your connector via share link or on the community*
+
+### Sharing your connector privately
+Sharing your connector privately can be easily done via a private share link. You can find this in the `share` tab of your SDK console using
 
 ### Sharing newly released versions with others who have previously cloned your connector
 The relationship between the original parent connector and its child cloned connector is still maintained. When a new version is released in the parent connector, each child connector receives a notification that an update is available.
