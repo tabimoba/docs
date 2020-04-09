@@ -21,7 +21,7 @@ There are 2 ways to connect to Jira — [API tokens](#api-tokens) and [basic aut
 We strongly recommend using API tokens to connect to Workato.
 
 ### API tokens
-API tokens are the primary method to authenticate with Jira. For on-premise Jira, you can also use basic authentication with password.
+API tokens are the primary method to authenticate with Jira. For on-premise Jira, you can only use basic authentication with password.
 
 ![API token auth](~@img/jira-docs/api-token-auth.png)
 
