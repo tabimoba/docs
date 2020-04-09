@@ -396,7 +396,7 @@ Control types are a way for you to declare how input fields are displayed to use
   hint: 'Hint for schema designer field',
   item_label: 'button',
   add_field_label: 'Custom Add Label',
-  empty_schema_message: 'Custom empty schema message that allows to <button type="button" data-action="addField">add field</button> and <button type="button" data-action="generateSchema">generate schema</button>',
+  empty_schema_message: 'Custom empty schema message that allows to &lt;button type="button" data-action="addField"&gt;add field&lt;/button&gt; and &lt;button type="button" data-action="generateSchema"&gt;generate schema&lt;/button&gt;',
   sample_data_type: 'csv' # json_input / xml     
 },</code></pre>
         <img src="~@img/sdk/schema_designer.png" alt="schema_designer">
@@ -598,7 +598,7 @@ object_definitions:
           sample_data_type: 'csv' # json_input / xml     
         },
         if input_schema.present?
-          { name: 'data', type: 'object', properties: data_props }
+          { name: 'data', type: 'object', properties: input_schema }
         end
       ].compact
     end
